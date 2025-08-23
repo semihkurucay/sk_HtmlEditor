@@ -745,6 +745,8 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
         choose.setDialogTitle("HTML Çıktı");
         choose.setDialogType(JFileChooser.SAVE_DIALOG);
+        
+        choose.setAcceptAllFileFilterUsed(false);
         int select = choose.showDialog(null, "Kaydet");
         
         if(select == JFileChooser.APPROVE_OPTION){
