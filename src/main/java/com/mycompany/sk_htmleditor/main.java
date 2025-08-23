@@ -765,7 +765,6 @@ public class main extends javax.swing.JFrame {
         choose.setDialogTitle("HTML Dosyası Açın");
         choose.setDialogType(JFileChooser.OPEN_DIALOG);
         
-        choose.resetChoosableFileFilters();
         choose.setFileFilter(new FileNameExtensionFilter("HTML (.html)", "html"));
         choose.setFileFilter(new FileNameExtensionFilter("TXT (.txt)", "txt"));
         choose.setAcceptAllFileFilterUsed(false);
@@ -788,6 +787,8 @@ public class main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Dosya açılamadı.\nHata: " + e.getMessage() + "\n" + e.getLocalizedMessage(), "İşlem Tamamlanmadı", JOptionPane.ERROR_MESSAGE);
             }
         }
+        
+        choose.resetChoosableFileFilters();
     }//GEN-LAST:event_jButton32ActionPerformed
 
     /**
