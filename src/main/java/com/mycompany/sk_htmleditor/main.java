@@ -4,10 +4,14 @@
  */
 package com.mycompany.htmleditor;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -27,7 +31,8 @@ public class main extends javax.swing.JFrame {
     }
 
     JFileChooser choose = new JFileChooser();
-    FileWriter file;
+    FileWriter fileWrite;
+    File file;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +74,7 @@ public class main extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -319,6 +325,14 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jButton32.setText("HTML Aç");
+        jButton32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -327,7 +341,7 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -357,15 +371,16 @@ public class main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton30)))
+                                .addComponent(jButton30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton24)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jButton31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jButton24))
+                            .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -387,9 +402,8 @@ public class main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jButton19)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,7 +442,8 @@ public class main extends javax.swing.JFrame {
                     .addComponent(jButton28)
                     .addComponent(jButton29)
                     .addComponent(jButton30)
-                    .addComponent(jButton31))
+                    .addComponent(jButton31)
+                    .addComponent(jButton32))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -734,16 +749,46 @@ public class main extends javax.swing.JFrame {
         
         if(select == JFileChooser.APPROVE_OPTION){
             try{
-                file = new FileWriter(choose.getSelectedFile() + ".html");
-                file.write(txtHtmlCode.getText());
-                file.flush();
+                fileWrite = new FileWriter(choose.getSelectedFile() + ".html");
+                fileWrite.write(txtHtmlCode.getText());
+                fileWrite.flush();
                 JOptionPane.showMessageDialog(null, "Dosya başarıyla kaydedildi.", "İşlem Tamamlandı", JOptionPane.INFORMATION_MESSAGE);
-                file.close();
+                fileWrite.close();
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Dosya başarıyla kaydedilemedi.\nHata: " + e.getMessage() + "\n" + e.getLocalizedMessage(), "İşlem Tamamlanmadı", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+        choose.setDialogTitle("HTML Dosyası Açın");
+        choose.setDialogType(JFileChooser.OPEN_DIALOG);
+        
+        choose.resetChoosableFileFilters();
+        choose.setFileFilter(new FileNameExtensionFilter("HTML (.html)", "html"));
+        choose.setFileFilter(new FileNameExtensionFilter("TXT (.txt)", "txt"));
+        choose.setAcceptAllFileFilterUsed(false);
+        int select = choose.showDialog(null, "Aç");
+        
+        if(select == JFileChooser.APPROVE_OPTION){
+            try{
+                file = choose.getSelectedFile();
+                
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                txtHtmlCode.setText("");
+                String line;
+                
+                while((line = br.readLine()) != null){
+                    txtHtmlCode.append(line + "\n");
+                }
+                
+                br.close();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Dosya açılamadı.\nHata: " + e.getMessage() + "\n" + e.getLocalizedMessage(), "İşlem Tamamlanmadı", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton32ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -794,6 +839,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
