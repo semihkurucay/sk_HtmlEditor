@@ -20,16 +20,9 @@ HTML kodlarınızı yazabilir, canlı önizleme alabilir, çıktınızı dışa 
 ---
 
 ## 🖼️ Ekran Görüntüleri
-[Program Arayüzü]
-<img width="929" height="685" alt="Ekran görüntüsü 2025-08-23 114611" src="https://github.com/user-attachments/assets/f908db94-01c3-49bd-b495-58a655016aba" />
-
-[Tam Ekran]
-<img width="1915" height="1028" alt="Ekran görüntüsü 2025-08-23 114632" src="https://github.com/user-attachments/assets/c35a658e-f7e8-4104-adf5-0ed27d799c69" />
-
-[HTML/TXT Açma]
 <img width="519" height="358" alt="Ekran görüntüsü 2025-08-23 115210" src="https://github.com/user-attachments/assets/56368faf-3f91-4853-add9-1bf28f7be966" />
-
-[HTML Çıktısı Alma]
+<img width="929" height="685" alt="Ekran görüntüsü 2025-08-23 114611" src="https://github.com/user-attachments/assets/f908db94-01c3-49bd-b495-58a655016aba" />
+<img width="1915" height="1028" alt="Ekran görüntüsü 2025-08-23 114632" src="https://github.com/user-attachments/assets/c35a658e-f7e8-4104-adf5-0ed27d799c69" />
 <img width="509" height="351" alt="Ekran görüntüsü 2025-08-23 115219" src="https://github.com/user-attachments/assets/a344ad42-736a-4552-bf46-615702556512" />
 
 
