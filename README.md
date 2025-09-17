@@ -31,3 +31,12 @@ HTML kodlarınızı yazabilir, canlı önizleme alabilir, çıktınızı dışa 
 
 [HTML Çıktısı Alma]
 <img width="509" height="351" alt="Ekran görüntüsü 2025-08-23 115219" src="https://github.com/user-attachments/assets/a344ad42-736a-4552-bf46-615702556512" />
+
+
+## ⚖️ Lisans
+
+Bu proje [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) lisansı ile lisanslanmıştır.
+
+🔒 Ticari kullanım yasaktır.  
+📎 Eğitim ve kişisel kullanım için serbesttir.  
+📩 Ticari kullanım için iletişime geçiniz.
